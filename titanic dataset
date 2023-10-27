@@ -1,0 +1,31 @@
+import seaborn as sns
+
+titanic = sns.load_dataset("titanic")
+
+#Example hypothesis: maybe the people on the upper decks were more likely to survive! 
+#(For reference, the decks are ordered in alphabetical order, so deck A was at the top, and G at the bottom of the ship).
+sns.barplot(data=titanic, x = 'deck', y = "survived")
+
+#Work on your hypothesis 1 here
+
+titanic.describe
+
+#First hypothesis: More females survived than males.
+import seaborn as sns
+sns.barplot(x="sex", y="survived", data=titanic)
+
+#then the hypothesis is true: females survived than males
+
+#Work on your hypothesis 2 here
+
+#More old people survived than young people
+sns.barplot(x="age", y="survived", data=titanic, estimator='mean')
+
+#The hypothesis is somehow true, but More old people and children survived than young adults.
+
+#Work on your hypothesis 3 here
+
+#Third hypoyjesis: people who were alone were more likely to survive than those who were not alone.
+sns.barplot(x="alone", y="survived", data=titanic)
+
+#The hypothesis is false as more people of those who were not alone survived
